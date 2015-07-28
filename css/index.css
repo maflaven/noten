@@ -1,0 +1,106 @@
+@import "./vendor/bootstrap-grid-glyphicons.min.css";
+@import "./vendor/quill.snow.css";
+
+body {
+  background: black;
+  color: white;
+}
+
+#note-index {
+  list-style: none;
+}
+
+#note-index .ui-sortable-helper .note {
+  box-shadow: 0 0 15px;
+}
+
+#note-index .note {
+  height: 100%;
+  background: white;
+  border-radius: 3px;
+}
+
+.landing h2 {
+  color: white;
+  margin: 20px 0;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.note-index-item {
+  color: black;
+  height: 230px;
+  padding: 13px;
+}
+
+.note-index-item ul {
+  list-style-type: disc;
+}
+
+.note-index-item .handle {
+  position: absolute;
+  right: 13px;
+  border: none;
+  border-radius: 0 3px 0 5px;
+}
+
+.note-index-item .buttons {
+  padding-bottom: 15px;
+}
+
+.note-index-item .delete {
+  border-radius: 3px 0 0 0;
+  float: left;
+}
+
+.note-index-item .edit {
+  border-radius: 0 0 5px 0;
+}
+
+.note-index-item .content {
+  max-height: 145px;
+  padding: 10px;
+  overflow: hidden;
+  margin: 0 10px;
+}
+
+.note-index-item .content * {
+  word-wrap: break-word;
+}
+
+.note-show {
+  margin: 20px 28px 0 28px;
+}
+
+.note-show .ql-format-button {
+  background-color: white;
+}
+
+.note-show .ql-bold {
+  border-radius: 5px 0 0 5px;
+}
+
+.note-show #editor-toolbar, #reader-toolbar {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.note-show #save {
+  padding: 2px 10px;
+  border-radius: 0 5px 5px 0;
+}
+
+.note-show #reader-toolbar {
+  padding: 7px;
+}
+
+.note-show .content button{
+  padding: 2px;
+}
+
+.note-show .ql-editor {
+  min-height: 80vh;
+}

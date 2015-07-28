@@ -1,0 +1,1 @@
+window.index_ejs = '<h2 class="text-center">noten <button class="btn btn-primary btn-sm" id="new"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span></button></h2><ul class="container-fluid" id="note-index"></ul>';
