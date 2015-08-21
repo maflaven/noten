@@ -1,5 +1,5 @@
 #noten
-A simple note-taking app, optimized for desktop and mobile. It is purely client-side, using DOM storage as a database. The goal of this app was to make note taking as intuitive and simple possible by implementing the most essential features.
+A simple note-taking app, optimized for desktop and mobile. It is purely client-side, using DOM storage as a database. The goal of this app was to make note taking as intuitive and simple as possible by implementing only the most essential features.
 
 Live link: [noten][live]
 [live]: https://ranginuitrot.github.io/noten/
@@ -19,7 +19,9 @@ Live link: [noten][live]
 * jquery-ui (sortable)
 * quill.js
 * bootstrap (grid, glyphicons)
+* FileSaver
+* JSZip
 
 ###Future Improvements
-* inline note editing
-* export all notes to paginated text file
+- [ ] inline note editing
+- [x] export all notes to paginated text file
