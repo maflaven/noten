@@ -25,3 +25,4 @@ Live link: [noten][live]
 ###Future Improvements
 - [ ] inline note editing
 - [x] export all notes to .zip (plus export individuals to .txt)
+- [ ] export notes to .rtf instead of .txt
