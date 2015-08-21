@@ -24,7 +24,7 @@ NoteApp.Views.NoteIndex = Backbone.CompositeView.extend({
   makeSortableIndex: function () {
     this.$('#note-index').sortable({
       handle: ".handle",
-      stop: this.updateOrder.bind(this)
+      stop: this.updateVisibleOrder.bind(this)
     });
   },
 
@@ -47,12 +47,13 @@ NoteApp.Views.NoteIndex = Backbone.CompositeView.extend({
       'ord': -1
     });
     this.collection.add(note);
+    this.updateOrderAfterNew();
     Backbone.history.navigate('/notes/' + note.cid, { trigger: true });
   },
 
   addNoteView: function (note) {
     var subview = new NoteApp.Views.NoteIndexItem({
-      model: note,
+      model: note
     });
     this.addSubview('#note-index', subview);
   },
@@ -62,7 +63,17 @@ NoteApp.Views.NoteIndex = Backbone.CompositeView.extend({
     this.removeModelSubview('#note-index', note);
   },
 
-  updateOrder: function () {
+  updateOrderAfterNew: function () {
+    this.collection.each( function (note) {
+      if (note.get('ord') == -1) {
+        note.save({'ord': 0});
+      } else {
+        note.save({'ord': note.get('ord') + 1});
+      }
+    });
+  },
+
+  updateVisibleOrder: function () {
     var notes = this.$('.note-index-item');
     var that = this;
     notes.each( function (i, note) {
