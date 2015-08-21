@@ -24,4 +24,4 @@ Live link: [noten][live]
 
 ###Future Improvements
 - [ ] inline note editing
-- [x] export all notes to paginated text file
+- [x] export all notes to .zip (plus export individuals to .txt)
