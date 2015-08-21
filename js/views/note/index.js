@@ -9,14 +9,15 @@ NoteApp.Views.NoteIndex = Backbone.CompositeView.extend({
 
   events: {
     'click #new': 'addNewNote',
-    'click #download-all': 'downloadAllNotes'
+    'click #download-all': 'downloadAllNotes',
+    'click #delete-all': 'displayDeletionModal'
   },
 
   render: function () {
     this.template = new EJS({text: window.index_ejs}).render();
     this.$el.html(this.template);
     this.attachSubviews();
-    this.displayDownloadButton();
+    this.displayButtons();
     this.makeSortableIndex();
     return this;
   },
@@ -28,17 +29,25 @@ NoteApp.Views.NoteIndex = Backbone.CompositeView.extend({
     });
   },
 
-  displayDownloadButton: function () {
-    var $btn = this.$('#download-all');
-    $btn.prop("disabled", true);
+  displayButtons: function () {
+    var $btns = [this.$('#download-all'), this.$('#delete-all')];
+    $btns.forEach(function ($btn) {
+      $btn.prop("disabled", true);
+    })
     if (this.collection.length > 0) {
-      $btn.removeClass("hidden");
+      $btns.forEach(function ($btn) {
+        $btn.removeClass("hidden");
+      })
     } else {
-      $btn.fadeOut(100, function () {
-        $btn.addClass("hidden");
-      });
+      $btns.forEach(function ($btn) {
+        $btn.fadeOut(100, function () {
+          $btn.addClass("hidden");
+        });
+      })
     }
-    $btn.prop("disabled", false);
+    $btns.forEach(function ($btn) {
+      $btn.prop("disabled", false);
+    })
   },
 
   addNewNote: function (event) {
@@ -59,7 +68,7 @@ NoteApp.Views.NoteIndex = Backbone.CompositeView.extend({
   },
 
   removeNoteView: function (note) {
-    this.displayDownloadButton();
+    this.displayButtons();
     this.removeModelSubview('#note-index', note);
   },
 
@@ -92,5 +101,14 @@ NoteApp.Views.NoteIndex = Backbone.CompositeView.extend({
       type: 'blob'
     });
     saveAs(zipAsBlob, "noten.zip");
+  },
+
+  displayDeletionModal: function () {
+    if (window.confirm("Delete all notes?")) {
+      while (model = this.collection.first()) {
+        model.destroy({trigger: false});
+      }
+      this.render();
+    }
   }
 });

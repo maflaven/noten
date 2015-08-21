@@ -23,8 +23,13 @@ body {
 .landing h2 {
   font-size: 30px;
   color: white;
-  margin: 30px 0;
+  margin: 30px 0 40px 0;
   text-align: center;
+}
+
+.landing h2 #delete-all {
+  position: absolute;
+  left: 28px;
 }
 
 .landing h2 #download-all {
@@ -82,7 +87,7 @@ body {
 }
 
 .note-show {
-  margin: 20px 28px 0 28px;
+  margin: 30px 28px 0 28px;
 }
 
 .note-show .ql-format-button {
