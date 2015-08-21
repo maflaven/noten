@@ -21,9 +21,15 @@ body {
 }
 
 .landing h2 {
+  font-size: 30px;
   color: white;
-  margin: 20px 0;
+  margin: 30px 0;
   text-align: center;
+}
+
+.landing h2 #download-all {
+  position: absolute;
+  right: 28px;
 }
 
 .hidden {
@@ -57,6 +63,10 @@ body {
 }
 
 .note-index-item .edit {
+  border-radius: 0;
+}
+
+.note-index-item .download {
   border-radius: 0 0 5px 0;
 }
 
@@ -91,6 +101,7 @@ body {
 .note-show #save {
   padding: 2px 10px;
   border-radius: 0 5px 5px 0;
+  height: 24px;
 }
 
 .note-show #reader-toolbar {

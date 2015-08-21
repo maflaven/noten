@@ -3,12 +3,12 @@ NoteApp.Views.NoteIndexItem = Backbone.View.extend({
   className: 'col-xs-6 col-sm-4 col-md-3 note-index-item',
 
   initialize: function (options) {
-
   },
 
   events: {
     'click .edit': 'showNote',
-    'click .delete': 'deleteNote'
+    'click .delete': 'deleteNote',
+    'click .download': 'downloadNote'
   },
 
   render: function () {
@@ -27,5 +27,11 @@ NoteApp.Views.NoteIndexItem = Backbone.View.extend({
     this.$el.fadeOut("fast", function () {
       that.model.destroy();
     });
+  },
+
+  downloadNote: function (event) {
+    var text = this.model.get('text');
+    var blob = new Blob([text], {type: "text/plain"});
+    saveAs(blob, this.model.get("ord").toString() + ".txt");
   }
 });

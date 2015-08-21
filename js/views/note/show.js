@@ -69,6 +69,8 @@ NoteApp.Views.NoteShow = Backbone.View.extend({
   saveNote: function (event) {
     var content = this.editor.getHTML();
     this.model.save({'content': content});
+    var text = this.editor.getText();
+    this.model.save({'text': text});
     if (content == "<div><br></div>") {this.deleteNote();}
     this.reader.setHTML(content);
     this.toggleTools();
