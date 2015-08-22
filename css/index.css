@@ -50,13 +50,13 @@ body {
 .note-index-item ul {
   list-style-type: disc;
 }
-
+/*
 .note-index-item .handle {
   position: absolute;
   right: 13px;
   border: none;
   border-radius: 0 3px 0 5px;
-}
+}*/
 
 .note-index-item .buttons {
   padding-bottom: 15px;
@@ -76,10 +76,10 @@ body {
 }
 
 .note-index-item .content {
-  max-height: 145px;
-  padding: 10px;
+  max-height: 140px;
+  padding: 0;
   overflow: hidden;
-  margin: 0 10px;
+  margin: 0 15px;
 }
 
 .note-index-item .content * {

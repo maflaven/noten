@@ -24,7 +24,7 @@ NoteApp.Views.NoteIndex = Backbone.CompositeView.extend({
 
   makeSortableIndex: function () {
     this.$('#note-index').sortable({
-      handle: ".handle",
+      // handle: ".handle",
       stop: this.updateVisibleOrder.bind(this)
     });
   },
