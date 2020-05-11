@@ -1,19 +1,18 @@
-#noten
+# noten
 A simple note-taking app, optimized for desktop and mobile. It is purely client-side, using DOM storage as a database. The goal of this app was to make note taking as intuitive and simple as possible by implementing only the most essential features.
 
-Live link: [noten][live]
-[live]: https://ranginuitrot.github.io/noten/
+Live link: [noten](https://ranginuitrot.github.io/noten/)
 
-###Features
+### Features
 * rich text editor
 * drag and drop notes (sortable)
 * clean and simple UI
 
-###To Run
+### To Run
 * clone this repository
 * open index.html
 
-###3rd-Party Libraries
+### 3rd-Party Libraries
 * backbone.js
 * jquery
 * jquery-ui (sortable)
@@ -22,7 +21,7 @@ Live link: [noten][live]
 * FileSaver
 * JSZip
 
-###Future Improvements
+### Future Improvements
 - [ ] inline note editing
 - [x] export all notes to .zip (plus export individuals to .txt)
 - [ ] export notes to .rtf instead of .txt
