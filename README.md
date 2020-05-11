@@ -1,7 +1,7 @@
 # noten
 A simple note-taking app, optimized for desktop and mobile. It is purely client-side, using DOM storage as a database. The goal of this app was to make note taking as intuitive and simple as possible by implementing only the most essential features.
 
-Live link: [noten](https://ranginuitrot.github.io/noten/)
+Live link: [noten](https://maflaven.github.io/noten/)
 
 ### Features
 * rich text editor
